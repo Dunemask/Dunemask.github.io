@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* @keyframes squirrel {
+    from {background-color: red;}
+    to {background-color: blue;}
+} */
+div.content
+{
+	width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: squirrel;
+    animation-duration: 4s;
+}
+/*#instrument
+{
+	height:116px;
+	width:812px;
+	padding-right: 10px;
+	padding-top: 50px;
+	margin:auto;
+	position:absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}*/
+
+.box
+{
+	width:100px;
+	height:100px;
+	margin-left:10px;
+	margin-top:10px;
+	float:left;
+}
+#FavSong1
+{
+	background-color:#3e181b;
+	border:3px solid #db1d2d;
+}
+#FavSong2
+{
+	background-color:#422018;
+	border:3px solid #f0421c;
+}
+#FavSong3
+{
+	background-color:#45391b;
+	border:3px solid #fec02d;
+}
+#FavSong4
+{
+	background-color:#193c29;
+	border:3px solid #20d071;
+}
+#FavSong5
+{
+	background-color:#18323e;
+	border:3px solid #1a9ddb;
+}
+#FavSong6
+{
+	background-color:#331f35;
+	border:3px solid #a13fad;
+}
+#FavSong7
+{
+	background-color:#43293d;
+	border:3px solid #f26fd4;
+}
+
+#FavSong1:hover
+{
+	background-color:#661920;
+	cursor:pointer;
+}
+#FavSong2:hover
+{
+	background-color:#6e2819;
+	cursor:pointer;
+}
+#FavSong3:hover
+{
+	background-color:#735b20;
+	cursor:pointer;
+}
+#FavSong4:hover
+{
+	background-color:#1b613b;
+	cursor:pointer;
+}
+#FavSong5:hover
+{
+	background-color:#184d65;
+	cursor:pointer;
+}
+#FavSong6:hover
+{
+	background-color:#4e2753;
+	cursor:pointer;
+}
+#FavSong7:hover
+{
+	background-color:#6f3a62;
+	cursor:pointer;
+}
+#FavSong1:active
+{
+	background-color:#db1d2d;
+}
+#FavSong2:active
+{
+	background-color:#f0421c;
+}
+#FavSong3:active
+{
+	background-color:#fec02d;
+}
+#FavSong4:active
+{
+	background-color:#20d071;
+}
+#FavSong5:active
+{
+	background-color:#1a9ddb;
+}
+#FavSong6:active
+{
+	background-color:#a13fad;
+}
+#FavSong7:active
+{
+	background-color:#f26fd4;
+}
+#FavSong
+{
+background-color:#FFB271;
+    border:3px solid #FF7F19;
+}
+#FavSong:hover
+{
+background-color:#FFA150;
+    border:3px solid #FF7F19;
+    cursor:pointer;
+}
+#FavSong:active
+{
+     background-color:#FF7F19;
+    border:3px solid #FF7F19;
+}
+#FavSong8
+{
+background-color:#8AFF8F;
+    border:3px solid #32FF35;
+}
+#FavSong8:hover
+{
+background-color:#69FF71;
+    border:3px solid #32FF35;
+    cursor:pointer;
+}
+#FavSong8:active
+{
+     background-color:#32FF35;
+    border:3px solid #32FF35;
+}
+#FavSong9
+{
+background-color:#7273B2;
+    border:3px solid #3D14CC;
+}
+#FavSong9:hover
+{
+background-color:#5A4EB2;
+    border:3px solid  #3D14CC;
+    cursor:pointer;
+}
+#FavSong9:active
+{
+     background-color:#502CCC;
+    border:3px solid #3D14CC;
+}
+#input
+{
+    background-color:black;
+}

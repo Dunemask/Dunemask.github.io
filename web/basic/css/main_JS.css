@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+
+    
+body
+{
+    background:#232323;
+    color:#FFE066;
+    font-family:Courier New;
+}
+#wrapper
+{
+    width:32cm;
+    margin:0 auto;
+    background:#00730C;
+}
+
+h1
+{
+    color:#F59F11;
+    text-align: center;
+}
+ul
+{
+   
+    list-style-type:none;
+}
+div.nav
+{
+    background:#232323;
+    border: 10px solid #00730C;
+
+}
+div.nav li
+{
+    display:inline-block;
+    padding:1cm .67cm 10px .36cm;
+}
+div.nav li a
+{
+    color:#CC9900;
+    font-size:24px;
+    padding:1px 4.5px;
+    text-decoration:none;
+    border: 3px solid #B40000;
+}    
+div.nav li a:hover
+{
+    color:#FFBF00;
+    background:#232323;
+    box-shadow:#404040 0px 2px 3px 12px;
+    border: 3px solid #B40000;
+    cursor:pointer;
+    
+}
+.dropbtn {
+    display:inline-block;
+    background-color: #232323;
+    padding: 1 5px;
+    color:#cc9900;
+    font-size: 24px;
+    border: 3px solid #B40000;
+    font-family:Courier New;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#404040;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color:#FFBF00}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color:#23232;
+}
+
+.dropdown:hover .dropbtn {
+    background-color:#232323;
+    box-shadow:#404040 0px 2px 3px 12px;
+    color:#FFBF00;
+}
+
+.Reload
+{
+    display:inline-block;
+    background-color: #232323;
+    padding: 1 5px;
+    color:#FFBF00;
+    font-size: 24px;
+    border: 3px solid #B40000;
+    right:8.7cm;
+    border-radius: 96px 96px 96px 96px;
+    cursor: pointer;
+}
+div.content ul
+{
+    	width:100%;
+    	margin:0 auto;
+}
+div.content li
+{
+    background:#232323;
+    color:#F59F52;
+    width:40%;
+    min-height:300px;
+	max-height:300px;
+    padding:22px 0.5cm 0px 1.3cm;
+    margin:8px 7px;
+    float:left;
+}
+
+div.content li img
+{
+    max-width:50%;
+    float:left;
+    margin:12px 15px;
+    border:#656565 2px inset;
+}
+
+div.content li h2
+{
+    color:#CC9900;
+}
+.clearfloat
+{
+    clear:both;
+}
+.copyright
+{
+    color:#232323;
+}
