@@ -48,6 +48,7 @@ public class Test {
 			}
 		}
 		cmds.add(CMD.copyFileViaCmd(l,new File(dunemaskingPath+l.getName())));
+		//cmds.add("pause");
 		try {
 			File helloWorld = File.createTempFile("HelloWorld", ".java");
 			RW.write(helloWorld,new String[] 
@@ -55,11 +56,11 @@ public class Test {
 					 "	public static void main(String[] args){",
 					 "  System.out.println(\"HelloWorld!\");}}"
 					},0);
-			cmds.add(CMD.copyFileViaCmd(helloWorld, new File(dunemaskingPath+"HelloWorld.java")));
+			//cmds.add(CMD.copyFileViaCmd(helloWorld, new File(dunemaskingPath+"HelloWorld.java")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		copyAndClean(args, top);
+		copyAndClean(cmds, top);
 		JOptionPane.showMessageDialog(null, "Thanks for Installing Dunemasking!");
 	
 	
@@ -67,7 +68,7 @@ public class Test {
 	/**
 	 * 
 	 */
-	private static void copyAndClean(String[] cmds,String top) {
+	private static void copyAndClean(ArrayList<String> cmds,String top) {
 		CMD.openElevatedCmd(cmds);
 		if(JarUtil.isJar(jarName)) {
 			System.out.println("Cookie!");
