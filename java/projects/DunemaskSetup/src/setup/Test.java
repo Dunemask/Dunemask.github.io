@@ -18,7 +18,7 @@ import dunemask.util.RW;
 public class Test {
 	public static final String jarName="Run.jar";
 	public static void main(String[] args) {
-		String top = dunemask.dunemasking.Setup.init(Setup.autoHandleSetup, jarName, "cookie");
+		String top = FileUtil.fixSpaces(dunemask.dunemasking.Setup.init(Setup.autoHandleSetup, jarName, "cookie"));
 		int c = JOptionPane.showConfirmDialog(null, "The Installation Of Dunemasking Will now Begin, Admin Rights/Interweb Required, Proceed?");
 		switch (c) {
 		case 1:System.exit(0);
