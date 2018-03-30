@@ -4,7 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 import dunemask.dm.CMD;
 import dunemask.dunemasking.GitHub;
@@ -12,15 +15,71 @@ import dunemask.dunemasking.Setup;
 import dunemask.util.FileUtil;
 import dunemask.util.JarUtil;
 import dunemask.util.RW;
+import dunemask.util.StringUtil;
 
 public class Test {
 	public static final String jarName="Run";
 	static ArrayList<File> versions = new ArrayList<File>();
+	static String[] verList = RW.readAll(GitHub.gitFile("dunemask.github.io", "dunemasking/Versions.txt"));
 	public static void main(String[] args) {
-		String vers = JOptionPane.showInputDialog("Please Specify what Dunemasking Version You wish to download (double version only)");
-		versions.add(GitHub.gitFile("dunemask.github.io", "dunemasking/libraries/Dunemasking"+vers+".jar"));
-	
+		getVersions();
+		install();
 	}
+	
+	
+	/** Gets all the versions from Dunemasking
+	 * 
+	 * */
+	private static void getVersions() {
+		JFrame f= new JFrame("Versions");
+		JPanel p = new JPanel(null);
+		JTextArea tb = new JTextArea();
+		for(String v:verList) {
+			tb.setText(tb.getText()+v+"\r\n");
+		}
+		p.add(tb);
+		f.add(p);
+		boolean success = false;
+		while(!success) {
+			String vers = JOptionPane.showInputDialog("Please Specify what Dunemasking Version You wish to download (double of version only)");
+			if(vers!=""&&vers!=null&&checkAvailable(vers)) {
+				versions.add(GitHub.gitFile("dunemask.github.io", "dunemasking/libraries/Dunemasking"+vers+".jar"));
+					String tmp = JOptionPane.showInputDialog("More? Y/N");
+					if(StringUtil.containsIgnoreCase(tmp, "N")) {
+						success = true;
+						f.setVisible(false);
+					}
+			}else if(vers!=""&&vers!=null) {
+				JOptionPane.showMessageDialog(null,"Please Select a Valid Version from one of these");
+				f.setSize(verList.length*30, verList.length*30);
+				f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+				tb.setSize(f.getSize());
+				f.setVisible(true);
+				f.setLocationRelativeTo(null);;
+				f.repaint();
+				f.revalidate();
+				
+			}else {
+				System.exit(0);
+			}
+		}
+		
+	}
+	/**Checks if it's a valid version of Dunemasking
+	 * */
+	public static boolean checkAvailable(String vers) {
+		boolean avail = false;
+		for(int i=0;i<verList.length;i++) {
+			if(verList[i].contains(vers)) {
+				avail=true;
+				i=verList.length;
+			}
+		}
+		return avail;
+	}
+	
+	/**Installs this loaders components
+	 * */
 	private static void install() {
 		String top = FileUtil.fixSpaces(dunemask.dunemasking.Setup.init(Setup.autoHandleSetup, jarName, "cookie")).replaceAll("%20", " ");
 		int c = JOptionPane.showConfirmDialog(null, "The Installation Of Dunemasking Will now Begin, Admin Rights/Interweb Required, Proceed?");
@@ -61,10 +120,24 @@ public class Test {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		cmds.addAll(installAndCopyDunemasking(dunemaskingPath));
+		//cmds.add("pause");
 		copyAndClean(cmds, top);
 		JOptionPane.showMessageDialog(null, "Thanks for Installing Dunemasking!");
 	
 	}
+	/** @param dunemaskingPath Path to dunemasking install folder.
+	 * */
+	private static ArrayList<String> installAndCopyDunemasking(String dunemaskingPath) {
+		ArrayList<String> commands = new ArrayList<String>();
+		commands.add("mkdir \""+dunemaskingPath+"dunemask_libraries\"");
+		for(int i=0;i<versions.size();i++) {
+			commands.add(CMD.copyFileViaCmd(versions.get(i),new File(dunemaskingPath+"dunemask_libraries\\"+versions.get(i).getName())));
+		}
+		return commands;
+	}
+
+
 	/**
 	 * 
 	 */
