@@ -131,7 +131,10 @@ public class Test {
 	 * @param top
 	 */
 	public static void downloadAllApps(String top) {
-		
+		for(int i=0;i<versions.size();i++) {
+			String vers = versions.get(i).getName().replace("Dunemasking", "").replace(".jar", "");
+			GitHub.gitFile("dunemask.github.io", "dunemasking/apps/"+vers+"apps.jar", new File(top+"export/apps/"+vers+"Apps.jar"));
+		}
 		
 	}
 
