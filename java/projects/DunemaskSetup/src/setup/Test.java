@@ -18,6 +18,7 @@ import dunemask.util.RW;
 import dunemask.util.StringUtil;
 
 public class Test {
+	public static String top;
 	public static final String jarName="Run";
 	static ArrayList<File> versions = new ArrayList<File>();
 	static String[] verList = RW.readAll(GitHub.gitFile("dunemask.github.io", "dunemasking/Versions.txt"));
@@ -81,7 +82,7 @@ public class Test {
 	/**Installs this loaders components
 	 * */
 	private static void install() {
-		String top = FileUtil.fixSpaces(dunemask.dunemasking.Setup.init(Setup.autoHandleSetup, jarName, "cookie")).replaceAll("%20", " ");
+		top = FileUtil.fixSpaces(dunemask.dunemasking.Setup.init(Setup.autoHandleSetup, jarName, "cookie")).replaceAll("%20", " ");
 		int c = JOptionPane.showConfirmDialog(null, "The Installation Of Dunemasking Will now Begin, Admin Rights/Interweb Required, Proceed?");
 		switch (c) {
 		case 1:System.exit(0);
@@ -120,17 +121,17 @@ public class Test {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		downloadAllApps();
 		cmds.addAll(installAndCopyDunemasking(dunemaskingPath));
 		//cmds.add("pause");
-		downloadAllApps(top);
-		copyAndClean(cmds, top);
+		copyAndClean(cmds);
 		JOptionPane.showMessageDialog(null, "Thanks for Installing Dunemasking!");
 		System.exit(0);
 	}
 	/**
 	 * @param top
 	 */
-	public static void downloadAllApps(String top) {
+	public static void downloadAllApps() {
 		for(int i=0;i<versions.size();i++) {
 			String vers = versions.get(i).getName().replace("Dunemasking", "").replace(".jar", "");
 			GitHub.gitFile("dunemask.github.io", "dunemasking/apps/"+vers+"Apps.jar", new File(top+"export/apps/"+vers+"Apps.jar"));
@@ -147,6 +148,19 @@ public class Test {
 		for(int i=0;i<versions.size();i++) {
 			commands.add(CMD.copyFileViaCmd(versions.get(i),new File(dunemaskingPath+"dunemask_libraries\\"+versions.get(i).getName())));
 		}
+		commands.add("mkdir \""+dunemaskingPath+"apps\"");
+		for(int i=0;i<versions.size();i++) {
+			String vers = versions.get(i).getName().replace("Dunemasking", "").replace(".jar", "");
+			File appHolder = new File(top+"export/apps/"+vers+"Apps.jar");
+			try {
+				JarUtil.extractAllOpenDialog(appHolder,top+"export/apps/"+vers+"Apps/");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			appHolder.delete();
+		}
+		commands.add(CMD.copyFolderAndSubContetntsViaCmd(top+"export/apps/", dunemaskingPath+"apps/"));
+		commands.add("pause");
 		return commands;
 	}
 
@@ -154,11 +168,11 @@ public class Test {
 	/**
 	 * 
 	 */
-	private static void copyAndClean(ArrayList<String> cmds,String top) {
+	private static void copyAndClean(ArrayList<String> cmds) {
 		CMD.openElevatedCmd(cmds);
 		if(JarUtil.isJar(jarName)) {
 			System.out.println("Cookie!");
-			FileUtil.deleteAllSubFolders(new File(top));
+			//FileUtil.deleteAllSubFolders(new File(top));
 			System.out.println("top "+top);
 		}
 		
