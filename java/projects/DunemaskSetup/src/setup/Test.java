@@ -154,7 +154,7 @@ public class Test {
 			String vers = versions.get(i).getName().replace("Dunemasking", "").replace(".jar", "");
 			File appHolder = new File(top+"export/apps/"+vers+"Apps.jar");
 			try {
-				JarUtil.extractAllOpenDialog(appHolder,top+"export/apps/"+vers+"Apps/");
+				JarUtil.extractAll(appHolder,top+"export/apps/"+vers+"Apps/");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
