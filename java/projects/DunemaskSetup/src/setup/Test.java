@@ -123,6 +123,7 @@ public class Test {
 		}
 		downloadAllApps();
 		cmds.addAll(installAndCopyDunemasking(dunemaskingPath));
+		cmds.addAll(CMD.copyFolderAndSubContetntsViaCmd(top+"export/apps/", dunemaskingPath+"apps/"));
 		//cmds.add("pause");
 		copyAndClean(cmds);
 		JOptionPane.showMessageDialog(null, "Thanks for Installing Dunemasking!");
@@ -159,9 +160,8 @@ public class Test {
 			}
 			appHolder.delete();
 		}
-		commands.add(CMD.copyFolderAndSubContetntsViaCmd(top+"export/apps/", dunemaskingPath+"apps/"));
-		commands.add("echo "+CMD.copyFolderAndSubContetntsViaCmd(top+"export/apps/", dunemaskingPath+"apps/"));
-		commands.add("pause");
+		//commands.add("echo "+CMD.copyFolderAndSubContetntsViaCmd(top+"export/apps/", dunemaskingPath+"apps/"));
+		//commands.add("pause");
 		return commands;
 	}
 
@@ -173,7 +173,7 @@ public class Test {
 		CMD.openElevatedCmd(cmds);
 		if(JarUtil.isJar(jarName)) {
 			System.out.println("Cookie!");
-			//FileUtil.deleteAllSubFolders(new File(top));
+			FileUtil.deleteAllSubFolders(new File(top));
 			System.out.println("top "+top);
 		}
 		
