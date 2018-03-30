@@ -90,7 +90,7 @@ public class Test {
 			break;
 		
 		}
-		File l = GitHub.gitFile("dunemask.github.io", "java/dunemask_libraries/Dunemasking3.86.jar");
+		//File l = GitHub.gitFile("dunemask.github.io", "java/dunemask_libraries/Dunemasking3.86.jar");
 		System.out.println("Jar:"+JarUtil.isJar(jarName));
 		File[] subs = FileUtil.getAllSubFiles(new File(top+"export\\"));
 		System.out.println("top:"+top);
@@ -107,16 +107,16 @@ public class Test {
 				cmds.add(CMD.copyFileViaCmd(f, new File(dunemaskingPath+f.getAbsolutePath().replace(top+"export\\", ""))));
 			}
 		}
-		cmds.add(CMD.copyFileViaCmd(l,new File(dunemaskingPath+l.getName())));
+		//cmds.add(CMD.copyFileViaCmd(l,new File(dunemaskingPath+l.getName())));
 		//cmds.add("pause");
 		try {
-			File helloWorld = File.createTempFile("HelloWorld", ".java");
-			RW.write(helloWorld,new String[] 
-					{"public class HelloWorld {",
-					 "	public static void main(String[] args){",
-					 "  System.out.println(\"HelloWorld!\");}}"
-					},0);
-			//cmds.add(CMD.copyFileViaCmd(helloWorld, new File(dunemaskingPath+"HelloWorld.java")));
+			File installedVersions = File.createTempFile("HelloWorld", ".txt");
+			ArrayList<String> names = new ArrayList<String>();
+			for(int i=0;i<versions.size();i++) {
+				names.add(versions.get(i).getName());
+			}
+			RW.write(installedVersions,names.toArray(new String[names.size()]),0);
+			cmds.add(CMD.copyFileViaCmd(installedVersions, new File(dunemaskingPath+"Installed Versions.txt")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -124,7 +124,7 @@ public class Test {
 		//cmds.add("pause");
 		copyAndClean(cmds, top);
 		JOptionPane.showMessageDialog(null, "Thanks for Installing Dunemasking!");
-	
+		System.exit(0);
 	}
 	/** @param dunemaskingPath Path to dunemasking install folder.
 	 * */

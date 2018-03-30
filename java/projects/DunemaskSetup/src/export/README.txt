@@ -1,0 +1,2 @@
+Dunemasking is currently an opensource project developed for the use of small tools the creator wanted all people to be able to use.
+Please note that certain commands can damage your system. Be safe, have fun, Enjoy! -Elijah Parker (C) 2018
