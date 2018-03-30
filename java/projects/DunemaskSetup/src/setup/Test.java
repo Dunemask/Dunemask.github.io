@@ -122,10 +122,20 @@ public class Test {
 		}
 		cmds.addAll(installAndCopyDunemasking(dunemaskingPath));
 		//cmds.add("pause");
+		downloadAllApps(top);
 		copyAndClean(cmds, top);
 		JOptionPane.showMessageDialog(null, "Thanks for Installing Dunemasking!");
 		System.exit(0);
 	}
+	/**
+	 * @param top
+	 */
+	public static void downloadAllApps(String top) {
+		
+		
+	}
+
+
 	/** @param dunemaskingPath Path to dunemasking install folder.
 	 * */
 	private static ArrayList<String> installAndCopyDunemasking(String dunemaskingPath) {
