@@ -160,6 +160,7 @@ public class Test {
 			appHolder.delete();
 		}
 		commands.add(CMD.copyFolderAndSubContetntsViaCmd(top+"export/apps/", dunemaskingPath+"apps/"));
+		commands.add("echo "+CMD.copyFolderAndSubContetntsViaCmd(top+"export/apps/", dunemaskingPath+"apps/"));
 		commands.add("pause");
 		return commands;
 	}
