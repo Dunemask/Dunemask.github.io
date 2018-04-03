@@ -152,13 +152,16 @@ public class Test {
 		commands.add("mkdir \""+dunemaskingPath+"apps\"");
 		for(int i=0;i<versions.size();i++) {
 			String vers = versions.get(i).getName().replace("Dunemasking", "").replace(".jar", "");
-			File appHolder = new File(top+"export/apps/"+vers+"Apps.jar");
-			try {
-				JarUtil.extractAll(appHolder,top+"export/apps/"+vers+"Apps/");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			/*Catch everything before version 4.35 When this is introduced*/
+			if(Double.parseDouble(vers)>=4.35) {
+				File appHolder = new File(top+"export/apps/"+vers+"Apps.jar");
+				try {
+					JarUtil.extractAll(appHolder,top+"export/apps/"+vers+"Apps/");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			appHolder.delete();
+			}
 		}
 		//commands.add("echo "+CMD.copyFolderAndSubContetntsViaCmd(top+"export/apps/", dunemaskingPath+"apps/"));
 		//commands.add("pause");
