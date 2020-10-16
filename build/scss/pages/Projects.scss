@@ -1,0 +1,47 @@
+@import "../index.scss";
+//Imports "_colors.scss","../components/Topbar.scss"
+
+.projects{
+  background-color:$backgroundShadeDarker;
+  border-radius:$defaultBorderRadius;
+  padding:20px;
+}
+
+.project-section{
+  display:flex;
+  flex-wrap: wrap;
+  flex-grow:1;
+  justify-content: center;
+}
+
+.sub-project-section{
+  width:310px;
+  padding:0px;
+}
+#dunemasking-about{
+  width:260px;
+  margin:0 auto;
+}
+
+.project-downloads ul{
+  padding: 0;
+  list-style: none;
+}
+.project-downloads li{
+  padding:3px 0px;
+}
+
+#dunemasking-downloads{
+    margin:0 auto;
+}
+.projects a{
+  color:$boldWhite;
+  text-decoration: none;
+}
+
+.projects a:hover {
+    opacity: .82;
+}
+.projects-wrapper{
+  display:inline-block;
+}
