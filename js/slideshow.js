@@ -1,18 +1,18 @@
 var slideIndex = 1;
-let staticUpdate = false;
-showSlidesstaticUpdate(slideIndex);
+let static = false;
+showSlidesStatic(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  showSlidesstaticUpdate(slideIndex += n);
+  showSlidesStatic(slideIndex += n);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-  showSlidesstaticUpdate(slideIndex = n);
+  showSlidesStatic(slideIndex = n);
 }
 
-function showSlidesstaticUpdate(n) {
+function showSlidesStatic(n) {
   var i;
   var slides = document.getElementsByClassName("slide-container");
   var dots = document.getElementsByClassName("slideshow-dot");
@@ -31,22 +31,20 @@ function showSlidesstaticUpdate(n) {
 window.addEventListener('DOMContentLoaded', (event) => {
 document.getElementById('prev-slideshow').addEventListener("click", function(evt){
   plusSlides(-1)
-  staticUpdate=true;
-
-
+  static=true;
 });
 
 document.getElementById('next-slideshow').addEventListener("click", function(evt){
   plusSlides(1)
-  staticUpdate=true;
-
-
+  static=true;
 });
 for(let i=1;i<=5;i++){
   document.getElementById(`slideshow-dot-${i}`).addEventListener("click", function(evt){
     currentSlide(i);
-    staticUpdate=true;
+    static=true;
   });
 }
+window.setInterval(function(){ if(!static){plusSlides(1)}},9000);
+
 
 });

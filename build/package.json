@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "watch": "node-sass -w scss/pages/ -o ../css/",
-    "test": "node-sass scss/pages/ -o ../css/ && node index.js"
+    "test": "node-sass scss/pages/ -o ../css/ && node index.js",
+    "start": "node index.js"
   },
   "author": "dunemask",
   "license": "LGPLv2.1",

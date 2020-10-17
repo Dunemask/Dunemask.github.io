@@ -614,7 +614,7 @@ body {
   margin-top: 0;
   height: 95%;
   text-align: center;
-  background-image: url("../../files/images/index/tree.svg");
+  background-image: url("../files/images/tree.svg");
   background-size: 100% 75%;
   background-repeat: no-repeat;
   background-position: center; }
@@ -625,10 +625,16 @@ textarea:focus,
 button:focus {
   outline: none; }
 
+.projects-wrapper {
+  width: 100%; }
+
 .projects {
+  margin: 0 auto;
   background-color: rgba(20, 20, 20, 0.92);
   border-radius: 10px;
-  padding: 20px; }
+  padding: 20px;
+  min-width: 375px;
+  max-width: 700px; }
 
 .project-section {
   display: flex;
@@ -636,23 +642,19 @@ button:focus {
   flex-grow: 1;
   justify-content: center; }
 
-.sub-project-section {
-  width: 310px;
-  padding: 0px; }
+.project-section h3 {
+  line-height: normal; }
 
-#dunemasking-about {
-  width: 260px;
-  margin: 0 auto; }
+.sub-project-section {
+  width: 35%;
+  padding: 20px; }
 
 .project-downloads ul {
   padding: 0;
   list-style: none; }
 
 .project-downloads li {
-  padding: 3px 0px; }
-
-#dunemasking-downloads {
-  margin: 0 auto; }
+  padding: 8px 0px; }
 
 .projects a {
   color: white;
@@ -660,6 +662,3 @@ button:focus {
 
 .projects a:hover {
   opacity: .82; }
-
-.projects-wrapper {
-  display: inline-block; }
