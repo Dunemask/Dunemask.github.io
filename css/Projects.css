@@ -647,7 +647,7 @@ button:focus {
 
 .sub-project-section {
   width: 35%;
-  padding: 20px; }
+  padding: 0 20px; }
 
 .project-downloads ul {
   padding: 0;
