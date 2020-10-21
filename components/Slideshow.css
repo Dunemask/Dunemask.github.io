@@ -2,7 +2,10 @@
   background-color: rgba(23, 23, 23, 0.8);
   width: 100%;
   display: inline-block;
-  padding-left: calc(100vw - 100%); }
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999; }
 
 .nav {
   line-height: 36px;
@@ -594,37 +597,6 @@ pre {
   -ms-overflow-style: none;
   scrollbar-width: none; }
 
-html {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  height: 100%;
-  width: 100%;
-  color: white;
-  overflow: scroll;
-  background: linear-gradient(70deg, black 0%, #c70207 100%) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-
-body {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  height: 95%;
-  text-align: center;
-  background-image: url("../files/images/tree.svg");
-  background-size: 100% 75%;
-  background-repeat: no-repeat;
-  background-position: center; }
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none; }
-
 footer {
   padding-top: 100px; }
 
@@ -659,6 +631,41 @@ footer {
 .copyright h1::first-letter {
   padding-left: 10px;
   font-size: 14px; }
+
+html {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background: linear-gradient(70deg, black 0%, #c70207 100%) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  height: 95%;
+  text-align: center;
+  background-image: url("../files/images/tree.svg");
+  background-size: 100% 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none; }
+
+.unique-content {
+  padding-top: 100px; }
 
 /* Slideshow container */
 .slideshow-wrapper {
@@ -714,7 +721,7 @@ footer {
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 0.4px;
+  bottom: 0px;
   width: 100%;
   text-align: center; }
 

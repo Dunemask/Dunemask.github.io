@@ -3,7 +3,10 @@
     background-color: $backgroundShade;
     width: 100%;
     display:inline-block;
-    padding-left: calc(100vw - 100%);
+    position: fixed;
+    left: 0;
+    top:0;
+    z-index: 999;
 }
 
 .nav{
