@@ -1,0 +1,45 @@
+@import "../index.scss";
+
+.certifications{
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.certification{
+  display:block;
+  padding:3 10px;
+  width:40%;
+}
+
+.certification h3{
+  /*white-space: nowrap;*/
+  line-height: normal;
+}
+
+.certification img{
+  width:100%;
+}
+
+
+.qualifcations-wrapper{
+  width:100%;
+}
+
+.qualifications{
+  min-width:375px;
+  max-width:700px;
+  margin: 0 auto;
+  background-color: $backgroundShadeDarker;
+  border-radius:$defaultBorderRadius;
+  padding:20px;
+}
+
+.skill{
+  padding:2px;
+}
+
+.skill img{
+  width:90%;
+}

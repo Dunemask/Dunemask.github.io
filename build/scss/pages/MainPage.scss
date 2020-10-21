@@ -1,6 +1,6 @@
 @import "../index.scss",'../components/Slideshow.scss';
 .story{
-  padding-top:50px;
+  padding:50px 0px;
 }
 
 .about-wrapper{
@@ -8,6 +8,7 @@
   border-radius: $defaultBorderRadius;
   background-color:$backgroundShade;
   border-collapse: separate;
+  padding:20px;
 }
 .about{
   max-width:680px;
@@ -16,25 +17,3 @@
 
 .about p {
   display: inline-block; }
-
-.connections {
-  float: right;
-
-}
-.connections a {
-  text-decoration: none;
-  font-size: 24px;
-  color:$boldWhite;
-  padding: 0px 4px; }
-
-.connections a:hover {
-    opacity: .7}
-
-.DM-Foot h1 {
-  float: left;
-  font-size: 14px;
-}
-  .DM-Foot h1::first-letter {
-    padding-left: 10px;
-    font-size: 20px;
-  }

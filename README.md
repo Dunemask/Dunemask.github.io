@@ -1,3 +1,1 @@
-## Welcome to Elijah Dunemask's Projects!
-(*Cough Cough*)
-
+## Welcome to Elijah Parker (Dunemask)'s Portfolio!
