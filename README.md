@@ -1,1 +1,3 @@
-## Welcome to Elijah Parker (Dunemask)'s Portfolio!
+# ⛔️ DEPRECATED
+
+Please see https://gitlab.com/dunemask/nile instead!
